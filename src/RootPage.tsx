@@ -5,6 +5,7 @@ import { GetBooksThunk } from "./store/slices/bookSlice"
 import Header from "./components/business/header/Header"
 import BookListSkeleton from "./components/business/book/book-list-skeleton/BookListSkeleton"
 import BookListWrapper from "./components/business/book/book-list-wrapper/BookListWrapper"
+import CreateAuthorForm from "./components/business/forms/create-author-form/CreateAuthorForm"
 
 const RootPage = () => {
   const dispatch = useAppDispatch()
@@ -28,6 +29,8 @@ const RootPage = () => {
       <div className="mt-10 w-full space-y-[15px] flex flex-col items-center ">
         <h2>Добавить книгу:</h2>
         <CreateBookForm />
+        <h2>Добавить автора:</h2>
+        <CreateAuthorForm />
       </div>
       <div className="mt-10">
         {isLoading

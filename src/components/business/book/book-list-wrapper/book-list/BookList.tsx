@@ -1,7 +1,7 @@
 import { IBook } from "@/types"
 import BookWrapper from "../../book-wrapper/BookWrapper"
 
-const BookList = ({ props }: { props: [string, IBook[]][]}) => {
+const BookList = ({ props }: { props: [string, IBook[]][] }) => {
 
 
     return (

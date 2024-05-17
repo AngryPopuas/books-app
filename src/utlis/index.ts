@@ -2,8 +2,18 @@ import { IBook } from "@/types";
 
 
 
+
+export const CheckIsBookRecommended = (book: IBook, books: Array<IBook>) => {
+    const stages = [false, false, false]
+
+}
+
 export const GetRecomendedBookUtil = (book: Array<IBook>) => {
-    return book.filter((book) => Number(book.publishedYear) + 3 < new Date().getFullYear())
+
+
+
+    return book
+        .filter((book) => Number(book.publishedYear) + 3 <= new Date().getFullYear())
         .sort((a, b) => Number(b.rating) - Number(a.rating))[0]
 }
 export const SortTitleUtil = (book: Array<IBook>) => {

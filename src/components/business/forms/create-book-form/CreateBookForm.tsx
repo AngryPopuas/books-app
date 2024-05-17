@@ -76,7 +76,7 @@ const CreateBookForm = () => {
             </div>
             {errors.authors && <span className="text-red-500 text-start m-[5px]">{errors.authors.message}</span>}
 
-            <Button disabled={isLoading} className="w-full">Создать</Button>
+            <Button disabled={isLoading} className="w-full">Создать книгу</Button>
         </form>
     )
 }

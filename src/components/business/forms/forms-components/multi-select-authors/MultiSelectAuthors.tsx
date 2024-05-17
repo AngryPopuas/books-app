@@ -37,7 +37,7 @@ const MultiSelectAuthors = ({ defaultValue, stateCallback }: { defaultValue?: Ar
 
     return (
         <div className='flex flex-col relative w-full'>
-            <div className='w-full flex items-center flex-wrap border border-input rounded-md bg-background'>
+            <div className='w-full flex items-center justify-start flex-wrap border border-input rounded-md bg-background'>
                 {selectedAuthors.map((author) => {
                     return (
                         <span

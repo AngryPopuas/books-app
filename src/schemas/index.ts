@@ -3,7 +3,9 @@ import { z } from 'zod'
 
 export const AuthorSchema = z.object({
     id: z.string(),
-    name: z.string(),
+    name: z.string()
+        .min(3, 'Название должно содержать хотя-бы 3 символа')
+        .max(26, 'Название должно быть меньше 26 символов'),
 })
 
 export const CreateBookFormSchema = z.object({

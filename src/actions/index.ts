@@ -4,6 +4,20 @@ import { IAuthor, IBook, ICreateBookForm } from '../types';
 import { collection, getDocs, deleteDoc } from "firebase/firestore";
 
 
+
+export const CreateAuthorAction = async (name: string) => {
+    try {
+        const data = {
+            name: `${name![0].toUpperCase()}${name?.slice(1, name.length)}`
+        }
+        const request = await addDoc(collection(db, "authors"), { ...data });
+        return request
+    } catch (err) {
+        throw new Error('There was a problem with your request')
+    }
+}
+
+
 export const GetAuthorsAction = async (authorQuery?: string) => {
     try {
         const data: Array<IAuthor> = []

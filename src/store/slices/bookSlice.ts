@@ -6,7 +6,7 @@ import { DeleteBookAction, GetBooksActions, SaveBookAction, UpdateBookAction } f
 
 export const GetBooksThunk = createAsyncThunk(
     'books/get',
-    async (filters: string, thunkAPI) => {
+    async (_filters: string, thunkAPI) => {
         try {
             const request = await GetBooksActions()
             return request
