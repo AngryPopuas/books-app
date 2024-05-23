@@ -2,19 +2,14 @@ import { IBook } from "@/types";
 
 
 
-
-export const CheckIsBookRecommended = (book: IBook, books: Array<IBook>) => {
-    const stages = [false, false, false]
-
-}
-
 export const GetRecomendedBookUtil = (book: Array<IBook>) => {
-
-
-
-    return book
-        .filter((book) => Number(book.publishedYear) + 3 <= new Date().getFullYear())
-        .sort((a, b) => Number(b.rating) - Number(a.rating))[0]
+    const filteredBooks = book.filter((book) => Number(book.publishedYear) + 3 <= new Date().getFullYear())
+    const sortedBooks = filteredBooks.sort((a, b) => Number(b.rating) - Number(a.rating))
+    const randomPick = sortedBooks.filter((item) => {
+        if (Number(item.rating) === Number(sortedBooks[0].rating)) return true
+        return false
+    })
+    return randomPick[Math.floor(Math.random() * randomPick.length)]
 }
 export const SortTitleUtil = (book: Array<IBook>) => {
     return book.sort((a, b) => a.title.localeCompare(b.title))

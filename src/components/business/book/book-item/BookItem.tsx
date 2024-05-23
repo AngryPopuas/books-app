@@ -4,7 +4,6 @@ import BookDropDown from "../book-drop-down/BookDropDown"
 import BookSvg1 from '../../../../assets/img/Book1.svg'
 import { DeleteBookThunk } from "@/store/slices/bookSlice";
 import { useToast } from "@/components/ui/use-toast";
-import BookRecommended from "../book-recommended/BookRecommended";
 
 
 const BookItem = ({ props, callback }: { props: IBook, callback: () => void }) => {
@@ -32,7 +31,6 @@ const BookItem = ({ props, callback }: { props: IBook, callback: () => void }) =
                 <p>Авторы: {props.authors.map(item => item.name).join(',').slice(0, 20)}</p>
                 <p>Рейтинг: {props.rating ? props.rating : 0}</p>
                 <p>Год издания: {props.publishedYear ? props.publishedYear : 'Неизвестно'}</p>
-                <BookRecommended props={props}/>
             </div>
         </div>
     )
